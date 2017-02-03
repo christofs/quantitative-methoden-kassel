@@ -1,0 +1,3061 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="chart-585b3b4a-b2a3-437f-a808-4cf5082823fc" class="pygal-chart" viewBox="0 0 800 600">
+  <!--Generated with pygal 2.2.2 (lxml) ©Kozea 2012-2016 on 2016-10-30-->
+  <!--http://pygal.org-->
+  <!--http://github.com/Kozea/pygal-->
+  <defs>
+    <style type="text/css">/*
+ * This file is part of pygal
+ *
+ * A python svg graph plotting library
+ * Copyright © 2012 Kozea
+
+ * This library is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with pygal. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+/*
+ * Font-sizes from config, override with care
+ */
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  {
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: FreeSans;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .title {
+  font-family: FreeSans;
+  font-size: 20px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .legends .legend text {
+  font-family: FreeSans;
+  font-size: 16px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis text {
+  font-family: FreeSans;
+  font-size: 12px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis text.major {
+  font-family: FreeSans;
+  font-size: 10px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .text-overlay text.value {
+  font-family: FreeSans;
+  font-size: 16px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .text-overlay text.label {
+  font-family: FreeSans;
+  font-size: 10px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip {
+  font-family: FreeSans;
+  font-size: 14px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc text.no_data {
+  font-family: FreeSans;
+  font-size: 64px;
+}
+
+/*
+ * This file is part of pygal
+ *
+ * A python svg graph plotting library
+ * Copyright © 2012 Kozea
+
+ * This library is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with pygal. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+/*
+ * Styles from config
+ */
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc {
+  background-color: white;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc path,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc rect,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc circle {
+  -webkit-transition: 100ms ease-in;
+  -moz-transition: 100ms ease-in;
+  transition: 100ms ease-in;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .graph &gt; .background {
+  fill: white;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .plot &gt; .background {
+  fill: white;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .graph {
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc text.no_data {
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .title {
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .legends .legend text {
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .legends .legend:hover text {
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .line {
+  stroke: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .guide.line {
+  stroke: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .major.line {
+  stroke: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis text.major {
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y .guides:hover .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .line-graph .axis.x .guides:hover .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .stackedline-graph .axis.x .guides:hover .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .xy-graph .axis.x .guides:hover .guide.line {
+  stroke: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .guides:hover text {
+  fill: #000000;
+}
+
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .reactive {
+  fill-opacity: .6;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .ci {
+    stroke: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .reactive.active,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .active .reactive {
+  fill-opacity: .9;
+  stroke-width: 4;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .ci .reactive.active {
+  stroke-width: 1.5;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .series text {
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip rect {
+  fill: white;
+  stroke: #000000;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .label {
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .label {
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .legend {
+  font-size: .8em;
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .x_label {
+  font-size: .6em;
+  fill: #000000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .xlink {
+  font-size: .5em;
+  text-decoration: underline;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip .value {
+  font-size: 1.5em;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .bound {
+  font-size: .5em;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .max-value {
+  font-size: .75em;
+  fill: #282828;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .map-element {
+  fill: white;
+  stroke: #282828 !important;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .map-element .reactive {
+  fill-opacity: inherit;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-0, #chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-0 a:visited {
+  stroke: #004080;
+  fill: #004080;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-1, #chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-1 a:visited {
+  stroke: #006600;
+  fill: #006600;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-2, #chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-2 a:visited {
+  stroke: #0059b3;
+  fill: #0059b3;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-3, #chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .color-3 a:visited {
+  stroke: #008000;
+  fill: #008000;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  .text-overlay .color-0 text {
+  fill: black;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  .text-overlay .color-1 text {
+  fill: black;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  .text-overlay .color-2 text {
+  fill: black;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  .text-overlay .color-3 text {
+  fill: black;
+}
+
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .series.serie-2 {
+
+  stroke-width: 2;
+
+  stroke-dasharray: 0, 0;
+
+}
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .series.serie-3 {
+
+  stroke-width: 2;
+
+  stroke-dasharray: 0, 0;
+
+}
+
+/*
+ * This file is part of pygal
+ *
+ * A python svg graph plotting library
+ * Copyright © 2012 Kozea
+
+ * This library is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with pygal. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc text.no_data {
+  text-anchor: middle;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .guide.line {
+  fill: none;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .centered {
+  text-anchor: middle;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .title {
+  text-anchor: middle;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .legends .legend text {
+  fill-opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.x text {
+  text-anchor: middle;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.x:not(.web) text[transform] {
+  text-anchor: start;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.x:not(.web) text[transform].backwards {
+  text-anchor: end;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y text {
+  text-anchor: end;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y text[transform].backwards {
+  text-anchor: start;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y2 text {
+  text-anchor: start;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y2 text[transform].backwards {
+  text-anchor: end;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .guide.line {
+  stroke-dasharray: 4,4;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .major.guide.line {
+  stroke-dasharray: 6,6;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .horizontal .axis.y .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .horizontal .axis.y2 .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .vertical .axis.x .guide.line {
+  opacity: 0;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .horizontal .axis.always_show .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .vertical .axis.always_show .guide.line {
+  opacity: 1 !important;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y .guides:hover .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.y2 .guides:hover .guide.line,
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis.x .guides:hover .guide.line {
+  opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .axis .guides:hover text {
+  opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .nofill {
+  fill: none;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .subtle-fill {
+  fill-opacity: .2;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .dot {
+  stroke-width: 1px;
+  fill-opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .dot.active {
+  stroke-width: 5px;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .dot.negative {
+  fill: transparent;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  text, #chart-585b3b4a-b2a3-437f-a808-4cf5082823fc  tspan {
+  stroke: none !important;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .series text.active {
+  opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip rect {
+  fill-opacity: .95;
+  stroke-width: .5;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .tooltip text {
+  fill-opacity: 1;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .showable {
+  visibility: hidden;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .showable.shown {
+  visibility: visible;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .gauge-background {
+  fill: rgba(229, 229, 229, 1);
+  stroke: none;
+}
+
+#chart-585b3b4a-b2a3-437f-a808-4cf5082823fc .bg-lines {
+  stroke: white;
+  stroke-width: 2px;
+}
+</style>
+    <script type="text/javascript">window.pygal = window.pygal || {};window.pygal.config = window.pygal.config || {};window.pygal.config['585b3b4a-b2a3-437f-a808-4cf5082823fc'] = {"show_minor_x_labels": true, "force_uri_protocol": "https", "include_x_axis": false, "tooltip_fancy_mode": true, "secondary_range": null, "x_title": "creation", "explicit_size": false, "missing_value_fill_truncation": "x", "x_labels": null, "logarithmic": false, "no_prefix": false, "allow_interruptions": false, "print_labels": false, "title": "novel: simenon vs contemporains", "dynamic_print_values": false, "fill": false, "x_labels_major_count": null, "js": ["//kozea.github.io/pygal.js/2.0.x/pygal-tooltips.min.js"], "max_scale": 16, "truncate_legend": null, "show_dots": true, "legends": ["simenon", "contemporains", "simenon-mean", "contemporains-mean"], "interpolate": null, "inner_radius": 0, "y_labels_major_count": null, "stroke_style": null, "disable_xml_declaration": false, "defs": [], "x_labels_major_every": null, "no_data_text": "No data", "range": null, "tooltip_border_radius": 0, "x_label_rotation": 300, "style": {"foreground": "#282828", "value_font_family": "FreeSans", "label_font_size": 12, "guide_stroke_dasharray": "4,4", "no_data_font_size": 64, "legend_font_size": 16, "legend_font_family": "FreeSans", "tooltip_font_family": "FreeSans", "tooltip_font_size": 14, "ci_colors": [], "major_label_font_size": 10, "font_family": "FreeSans", "no_data_font_family": "FreeSans", "major_guide_stroke_dasharray": "6,6", "title_font_size": 20, "value_label_font_size": 10, "colors": ["#004080", "#006600", "#0059b3", "#008000"], "plot_background": "white", "value_font_size": 16, "title_font_family": "FreeSans", "opacity_hover": ".9", "transition": "100ms ease-in", "value_background": "rgba(229, 229, 229, 1)", "major_label_font_family": "FreeSans", "label_font_family": "FreeSans", "value_label_font_family": "FreeSans", "foreground_subtle": "#282828", "foreground_strong": "#000000", "opacity": ".6", "background": "white", "value_colors": []}, "show_y_guides": true, "legend_box_size": 12, "width": 800, "show_legend": true, "xrange": null, "zero": 0, "strict": false, "box_mode": "extremes", "margin_left": null, "margin": 20, "stroke": false, "y_label_rotation": 0, "formatter": null, "inverse_y_axis": false, "css": ["file://style.css", "file://graph.css"], "show_only_major_dots": false, "show_y_labels": true, "legend_at_bottom": true, "y_labels": null, "truncate_label": null, "margin_bottom": null, "min_scale": 4, "order_min": null, "spacing": 10, "classes": ["pygal-chart"], "rounded_bars": null, "interpolation_precision": 250, "half_pie": false, "print_values_position": "center", "print_zeroes": true, "legend_at_bottom_columns": null, "print_values": false, "y_title": "CommonRatio", "dots_size": 2.5, "interpolation_parameters": {}, "y_labels_major_every": null, "stack_from_top": false, "y_labels_major": null, "height": 600, "show_x_guides": true, "show_x_labels": true, "pretty_print": true, "show_minor_y_labels": true, "margin_right": null, "x_labels_major": null, "margin_top": null}</script>
+    <script type="text/javascript" xlink:href="https://kozea.github.io/pygal.js/2.0.x/pygal-tooltips.min.js"/>
+  </defs>
+  <title>novel: simenon vs contemporains</title>
+  <g class="graph xy-graph vertical">
+    <rect class="background" height="600" width="800" x="0" y="0"/>
+    <g class="plot" transform="translate(88, 50)">
+      <rect class="background" height="415.0584683710082" width="691.2" x="0" y="0"/>
+      <g class="axis y">
+        <path class="line" d="M0.000000 415.058468 h691.200000"/>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 396.062211 h691.200000"/>
+          <text class="" x="-5" y="400.262210787">0.25</text>
+          <title>0.25</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 369.517970 h691.200000"/>
+          <text class="" x="-5" y="373.717969836">0.26</text>
+          <title>0.26</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 342.973729 h691.200000"/>
+          <text class="" x="-5" y="347.173728885">0.27</text>
+          <title>0.27</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 316.429488 h691.200000"/>
+          <text class="" x="-5" y="320.629487933">0.28</text>
+          <title>0.28</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 289.885247 h691.200000"/>
+          <text class="" x="-5" y="294.085246982">0.29</text>
+          <title>0.29</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 263.341006 h691.200000"/>
+          <text class="" x="-5" y="267.541006031">0.3</text>
+          <title>0.3</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 236.796765 h691.200000"/>
+          <text class="" x="-5" y="240.99676508">0.31</text>
+          <title>0.31</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 210.252524 h691.200000"/>
+          <text class="" x="-5" y="214.452524128">0.32</text>
+          <title>0.32</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 183.708283 h691.200000"/>
+          <text class="" x="-5" y="187.908283177">0.33</text>
+          <title>0.33</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 157.164042 h691.200000"/>
+          <text class="" x="-5" y="161.364042226">0.34</text>
+          <title>0.34</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 130.619801 h691.200000"/>
+          <text class="" x="-5" y="134.819801275">0.35</text>
+          <title>0.35</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 104.075560 h691.200000"/>
+          <text class="" x="-5" y="108.275560324">0.36</text>
+          <title>0.36</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 77.531319 h691.200000"/>
+          <text class="" x="-5" y="81.7313193723">0.37</text>
+          <title>0.37</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 50.987078 h691.200000"/>
+          <text class="" x="-5" y="55.187078421">0.38</text>
+          <title>0.38</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M0.000000 24.442837 h691.200000"/>
+          <text class="" x="-5" y="28.6428374698">0.39</text>
+          <title>0.39</title>
+        </g>
+      </g>
+      <g class="axis x always_show">
+        <path class="line" d="M0.000000 0.000000 v415.058468"/>
+        <g class="guides">
+          <path class="guide line" d="M13.292308 0.000000 v415.058468"/>
+          <text class="backwards" x="13.2923076923" y="431.0584683710082" transform="rotate(300 13.292308 431.058468)">1920</text>
+          <title>1920</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M120.488337 0.000000 v415.058468"/>
+          <text class="backwards" x="120.488337469" y="431.0584683710082" transform="rotate(300 120.488337 431.058468)">1930</text>
+          <title>1930</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M227.684367 0.000000 v415.058468"/>
+          <text class="backwards" x="227.684367246" y="431.0584683710082" transform="rotate(300 227.684367 431.058468)">1940</text>
+          <title>1940</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M334.880397 0.000000 v415.058468"/>
+          <text class="backwards" x="334.880397022" y="431.0584683710082" transform="rotate(300 334.880397 431.058468)">1950</text>
+          <title>1950</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M442.076427 0.000000 v415.058468"/>
+          <text class="backwards" x="442.076426799" y="431.0584683710082" transform="rotate(300 442.076427 431.058468)">1960</text>
+          <title>1960</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M549.272457 0.000000 v415.058468"/>
+          <text class="backwards" x="549.272456576" y="431.0584683710082" transform="rotate(300 549.272457 431.058468)">1970</text>
+          <title>1970</title>
+        </g>
+        <g class="guides">
+          <path class="guide line" d="M656.468486 0.000000 v415.058468"/>
+          <text class="backwards" x="656.468486352" y="431.0584683710082" transform="rotate(300 656.468486 431.058468)">1980</text>
+          <title>1980</title>
+        </g>
+      </g>
+      <g class="series serie-0 color-0"/>
+      <g class="series serie-1 color-1"/>
+      <g class="series serie-2 color-2">
+        <path class="line reactive nofill" d="M120.488337 79.016014 L570.711663 79.016014"/>
+      </g>
+      <g class="series serie-3 color-3">
+        <path class="line reactive nofill" d="M13.292308 156.318782 L677.907692 156.318782"/>
+      </g>
+    </g>
+    <g class="titles">
+      <text class="title plot_title" x="400.0" y="30">novel: simenon vs contemporains</text>
+      <text class="title" x="434.40000000000003" y="530.0">creation</text>
+      <text class="title" x="0" y="287.5292341855041" transform="rotate(-90 0.000000 257.529234)">CommonRatio</text>
+    </g>
+    <g class="plot overlay" transform="translate(88, 50)">
+      <g class="series serie-0 color-0">
+        <g class="dots">
+          <desc class="label">Simenon: Malempin (1940)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="227.684367246" cy="89.5175038296" r="5"/>
+          <desc class="value">1940: 0.3654844501</desc>
+          <desc class="x ">227.684367246</desc>
+          <desc class="y ">89.5175038296</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: EchecMaigret (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="68.1560341528" r="5"/>
+          <desc class="value">1956: 0.373531947</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">68.1560341528</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Pedigree3 (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="105.630675119" r="5"/>
+          <desc class="value">1943: 0.3594141423</desc>
+          <desc class="x ">259.843176179</desc>
+          <desc class="y ">105.630675119</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: PietrLetton (1930)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="120.488337469" cy="110.739810811" r="5"/>
+          <desc class="value">1930: 0.3574893799</desc>
+          <desc class="x ">120.488337469</desc>
+          <desc class="y ">110.739810811</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretCoroner (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="106.171323175" r="5"/>
+          <desc class="value">1949: 0.3592104642</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">106.171323175</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Pedigree2 (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="102.792479669" r="5"/>
+          <desc class="value">1942: 0.3604833744</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">102.792479669</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Train (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="94.9292494426" r="5"/>
+          <desc class="value">1961: 0.3634456856</desc>
+          <desc class="x left">452.796029777</desc>
+          <desc class="y left">94.9292494426</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretPeur (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="55.6561790821" r="5"/>
+          <desc class="value">1953: 0.3782410118</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">55.6561790821</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Dimanche (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="96.4830696752" r="5"/>
+          <desc class="value">1958: 0.3628603156</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">96.4830696752</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretNewYork (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="102.621520689" r="5"/>
+          <desc class="value">1947: 0.3605477797</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">102.621520689</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: RapportGendarme (1944)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="270.562779156" cy="70.2740344421" r="5"/>
+          <desc class="value">1944: 0.3727340337</desc>
+          <desc class="x ">270.562779156</desc>
+          <desc class="y ">70.2740344421</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: QuartierNegre (1935)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="174.086352357" cy="82.8691305147" r="5"/>
+          <desc class="value">1935: 0.3679890888</desc>
+          <desc class="x ">174.086352357</desc>
+          <desc class="y ">82.8691305147</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretTendPiege (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="90.806423686" r="5"/>
+          <desc class="value">1955: 0.3649988759</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">90.806423686</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretIndicateur (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="71.3122731414" r="5"/>
+          <desc class="value">1971: 0.3723428985</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">71.3122731414</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: AineFerchaux (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="90.8712980763" r="5"/>
+          <desc class="value">1943: 0.3649744358</desc>
+          <desc class="x ">259.843176179</desc>
+          <desc class="y ">90.8712980763</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: LibertyBar (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="81.3594841462" r="5"/>
+          <desc class="value">1932: 0.3685578172</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">81.3594841462</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MortAuguste (1966)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="506.394044665" cy="67.4548547559" r="5"/>
+          <desc class="value">1966: 0.373796102</desc>
+          <desc class="x left">506.394044665</desc>
+          <desc class="y left">67.4548547559</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: JumentPerdue (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="83.2049778071" r="5"/>
+          <desc class="value">1948: 0.3678625652</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">83.2049778071</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Porte (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="80.8380055444" r="5"/>
+          <desc class="value">1962: 0.3687542736</desc>
+          <desc class="x left">463.515632754</desc>
+          <desc class="y left">80.8380055444</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: FouBergerac (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="62.2089718942" r="5"/>
+          <desc class="value">1932: 0.3757723811</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">62.2089718942</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Vieille (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="58.8610938381" r="5"/>
+          <desc class="value">1959: 0.3770336257</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">58.8610938381</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretFlamands (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="67.3128735927" r="5"/>
+          <desc class="value">1932: 0.3738495905</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">67.3128735927</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MarieQuiLouche (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="44.305727603" r="5"/>
+          <desc class="value">1951: 0.3825170623</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">44.305727603</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaisonSeptFilles (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="62.326102339" r="5"/>
+          <desc class="value">1941: 0.3757282546</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">62.326102339</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: ChienJaune (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="76.353305867" r="5"/>
+          <desc class="value">1931: 0.3704437925</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">76.353305867</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Horloger (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="65.8516736492" r="5"/>
+          <desc class="value">1954: 0.3744000677</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">65.8516736492</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Temoins (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="91.8103924431" r="5"/>
+          <desc class="value">1955: 0.3646206512</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">91.8103924431</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: DisparitionOdile (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="31.856782263" r="5"/>
+          <desc class="value">1970: 0.3872069479</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">31.856782263</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TeteHomme (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="69.8970483542" r="5"/>
+          <desc class="value">1931: 0.3728760555</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">69.8970483542</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: NouveauVille (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="85.6600435041" r="5"/>
+          <desc class="value">1950: 0.3669376694</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">85.6600435041</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TempsAnais (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="66.0893008795" r="5"/>
+          <desc class="value">1951: 0.3743105465</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">66.0893008795</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: ScrupulesMaigret (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="76.9360451262" r="5"/>
+          <desc class="value">1957: 0.3702242574</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">76.9360451262</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: PassagerPolarlys (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="115.32071133" r="5"/>
+          <desc class="value">1932: 0.3557636193</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">115.32071133</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: CageVerre (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="36.7568934714" r="5"/>
+          <desc class="value">1971: 0.3853609312</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">36.7568934714</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretPicratts (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="55.2168132316" r="5"/>
+          <desc class="value">1950: 0.3784065339</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">55.2168132316</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: VeriteBebeDonge (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="85.3006655384" r="5"/>
+          <desc class="value">1942: 0.3670730577</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">85.3006655384</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Complices (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="101.460781645" r="5"/>
+          <desc class="value">1956: 0.3609850644</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">101.460781645</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretClochard (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="68.4048521696" r="5"/>
+          <desc class="value">1963: 0.3734382099</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">68.4048521696</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: DestinMalou (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="45.488021898" r="5"/>
+          <desc class="value">1947: 0.3820716571</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">45.488021898</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MonsieurLaSouris (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="116.106558892" r="5"/>
+          <desc class="value">1937: 0.3554675673</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">116.106558892</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: SignePicpus (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="88.729466102" r="5"/>
+          <desc class="value">1941: 0.3657813272</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">88.729466102</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Betty (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="46.5019152813" r="5"/>
+          <desc class="value">1961: 0.3816896935</desc>
+          <desc class="x left">452.796029777</desc>
+          <desc class="y left">46.5019152813</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Fils (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="105.589681255" r="5"/>
+          <desc class="value">1956: 0.3594295859</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">105.589681255</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: AnneauxBicetre (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="103.810332922" r="5"/>
+          <desc class="value">1963: 0.360099919</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">103.810332922</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretHommeSeul (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="65.0790883861" r="5"/>
+          <desc class="value">1971: 0.3746911234</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">65.0790883861</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Negre (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="115.461687263" r="5"/>
+          <desc class="value">1957: 0.3557105095</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">115.461687263</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Locataire (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="59.9985360637" r="5"/>
+          <desc class="value">1934: 0.3766051176</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">59.9985360637</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretClient (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="49.5990293622" r="5"/>
+          <desc class="value">1962: 0.3805229191</desc>
+          <desc class="x left">463.515632754</desc>
+          <desc class="y left">49.5990293622</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: FenetreRouet (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="59.0120692519" r="5"/>
+          <desc class="value">1942: 0.3769767488</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">59.0120692519</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: OursPeluche (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="78.173071257" r="5"/>
+          <desc class="value">1960: 0.3697582331</desc>
+          <desc class="x left">442.076426799</desc>
+          <desc class="y left">78.173071257</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TroisCrimesAmis (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="182.325013144" r="5"/>
+          <desc class="value">1937: 0.3305211187</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">182.325013144</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: PatienceMaigret (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="113.170134886" r="5"/>
+          <desc class="value">1965: 0.356573805</desc>
+          <desc class="x left">495.674441687</desc>
+          <desc class="y left">113.170134886</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Innocents (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="54.6636530165" r="5"/>
+          <desc class="value">1971: 0.3786149257</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">54.6636530165</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: ConfidenceMaigret (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="67.252755134" r="5"/>
+          <desc class="value">1959: 0.3738722389</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">67.252755134</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: VoleurMaigret (1966)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="506.394044665" cy="61.8472134409" r="5"/>
+          <desc class="value">1966: 0.3759086662</desc>
+          <desc class="x left">506.394044665</desc>
+          <desc class="y left">61.8472134409</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Demenagement (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="73.2552465457" r="5"/>
+          <desc class="value">1967: 0.371610923</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">73.2552465457</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: BourgmestreFurnes (1938)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="206.24516129" cy="83.2049778071" r="5"/>
+          <desc class="value">1938: 0.3678625652</desc>
+          <desc class="x ">206.24516129</desc>
+          <desc class="y ">83.2049778071</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: HommePetitChien (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="98.9713188587" r="5"/>
+          <desc class="value">1964: 0.3619229186</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">98.9713188587</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Felicie (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="92.5933939318" r="5"/>
+          <desc class="value">1942: 0.3643256714</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">92.5933939318</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: FuiteMonde (1945)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="281.282382134" cy="44.295783334" r="5"/>
+          <desc class="value">1945: 0.3825208086</desc>
+          <desc class="x ">281.282382134</desc>
+          <desc class="y ">44.295783334</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MonAmiMaigret (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="87.9517564732" r="5"/>
+          <desc class="value">1949: 0.3660743134</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">87.9517564732</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Maigret tueur (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="81.1118460208" r="5"/>
+          <desc class="value">1969: 0.3686511098</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">81.1118460208</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MortBelle (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="75.2096801605" r="5"/>
+          <desc class="value">1951: 0.3708746301</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">75.2096801605</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: LongCours (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="107.476965903" r="5"/>
+          <desc class="value">1936: 0.35871859</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">107.476965903</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaisonJuge (1940)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="227.684367246" cy="70.4727385247" r="5"/>
+          <desc class="value">1940: 0.372659176</desc>
+          <desc class="x ">227.684367246</desc>
+          <desc class="y ">70.4727385247</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Pedigree1 (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="94.7342275772" r="5"/>
+          <desc class="value">1941: 0.3635191561</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">94.7342275772</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TrainVenise (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="103.084630628" r="5"/>
+          <desc class="value">1965: 0.3603733125</desc>
+          <desc class="x left">495.674441687</desc>
+          <desc class="y left">103.084630628</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: FondBouteille (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="71.5888582924" r="5"/>
+          <desc class="value">1949: 0.3722387007</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">71.5888582924</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: CecileMorte (1940)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="227.684367246" cy="95.5341550011" r="5"/>
+          <desc class="value">1940: 0.3632177998</desc>
+          <desc class="x ">227.684367246</desc>
+          <desc class="y ">95.5341550011</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: AffaireNahour (1966)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="506.394044665" cy="90.3838006155" r="5"/>
+          <desc class="value">1966: 0.3651580905</desc>
+          <desc class="x left">506.394044665</desc>
+          <desc class="y left">90.3838006155</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TestamentDonadieu (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="91.153597937" r="5"/>
+          <desc class="value">1936: 0.3648680851</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">91.153597937</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MonsieurGallet (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="88.0459972882" r="5"/>
+          <desc class="value">1931: 0.3660388101</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">88.0459972882</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretEcole (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="58.1512509319" r="5"/>
+          <desc class="value">1954: 0.3773010445</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">58.1512509319</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: CoupLune (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="103.792027217" r="5"/>
+          <desc class="value">1933: 0.3601068153</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">103.792027217</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretFantome (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="73.1940251738" r="5"/>
+          <desc class="value">1964: 0.3716339869</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">73.1940251738</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretGrandePerche (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="39.0978016786" r="5"/>
+          <desc class="value">1951: 0.3844790419</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">39.0978016786</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretAssises (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="109.606559921" r="5"/>
+          <desc class="value">1959: 0.357916309</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">109.606559921</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: RicheHomme (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="62.5829093761" r="5"/>
+          <desc class="value">1970: 0.3756315078</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">62.5829093761</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretVieillards (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="75.0351058547" r="5"/>
+          <desc class="value">1960: 0.3709403974</desc>
+          <desc class="x left">442.076426799</desc>
+          <desc class="y left">75.0351058547</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: TouristeBananes (1938)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="206.24516129" cy="105.032090009" r="5"/>
+          <desc class="value">1938: 0.359639647</desc>
+          <desc class="x ">206.24516129</desc>
+          <desc class="y ">105.032090009</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: EncoreNoisetiers (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="76.9673208781" r="5"/>
+          <desc class="value">1969: 0.3702124749</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">76.9673208781</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Prison (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="44.6753683686" r="5"/>
+          <desc class="value">1967: 0.3823778077</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">44.6753683686</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: BilanMaletras (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="45.5177909987" r="5"/>
+          <desc class="value">1943: 0.3820604422</desc>
+          <desc class="x ">259.843176179</desc>
+          <desc class="y ">45.5177909987</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigreVoleur (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="86.1444382087" r="5"/>
+          <desc class="value">1961: 0.3667551836</desc>
+          <desc class="x left">452.796029777</desc>
+          <desc class="y left">86.1444382087</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Ecluse (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="85.6809226732" r="5"/>
+          <desc class="value">1933: 0.3669298036</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">85.6809226732</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: VoyageurToussaint (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="85.1600362734" r="5"/>
+          <desc class="value">1941: 0.3671260369</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">85.1600362734</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: DemoisellesConcarneau (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="63.1023926473" r="5"/>
+          <desc class="value">1936: 0.3754358031</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">63.1023926473</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: InspecteurCadavre (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="62.5423229662" r="5"/>
+          <desc class="value">1943: 0.3756467979</desc>
+          <desc class="x ">259.843176179</desc>
+          <desc class="y ">62.5423229662</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: AmieMmeMaigret (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="85.2035749337" r="5"/>
+          <desc class="value">1950: 0.3671096346</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">85.2035749337</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: RelaisAlsace (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="73.7130067588" r="5"/>
+          <desc class="value">1931: 0.3714384712</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">73.7130067588</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretSeFache (1945)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="281.282382134" cy="69.1733031672" r="5"/>
+          <desc class="value">1945: 0.3731487117</desc>
+          <desc class="x ">281.282382134</desc>
+          <desc class="y ">69.1733031672</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretMort (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="83.7363640469" r="5"/>
+          <desc class="value">1947: 0.3676623763</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">83.7363640469</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: JumentPerdue (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="106.053051328" r="5"/>
+          <desc class="value">1948: 0.3592550207</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">106.053051328</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: FolleMaigret (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="60.3147212405" r="5"/>
+          <desc class="value">1970: 0.3764860013</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">60.3147212405</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: NuitCarrefour (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="91.8887621909" r="5"/>
+          <desc class="value">1931: 0.364591127</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">91.8887621909</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: AntoineJulie (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="64.9407668774" r="5"/>
+          <desc class="value">1953: 0.3747432332</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">64.9407668774</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: Maigret (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="66.7297173235" r="5"/>
+          <desc class="value">1934: 0.3740692827</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">66.7297173235</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: VacancesMaigret (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="59.0190169415" r="5"/>
+          <desc class="value">1948: 0.3769741314</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">59.0190169415</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretHesite (1968)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="527.83325062" cy="53.6436799402" r="5"/>
+          <desc class="value">1968: 0.3789991797</desc>
+          <desc class="x left">527.83325062</desc>
+          <desc class="y left">53.6436799402</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simenon: MaigretLognon (1952)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="356.319602978" cy="75.4074947456" r="5"/>
+          <desc class="value">1952: 0.3708001075</desc>
+          <desc class="x left">356.319602978</desc>
+          <desc class="y left">75.4074947456</desc>
+        </g>
+      </g>
+      <g class="series serie-1 color-1">
+        <g class="dots">
+          <desc class="label">Malet: MicmacMoche (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="184.841372944" r="5"/>
+          <desc class="value">1957: 0.3295731316</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">184.841372944</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: PorteLarge (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="101.823614078" r="5"/>
+          <desc class="value">1969: 0.3608483747</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">101.823614078</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: VieDegueulasse (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="174.860202949" r="5"/>
+          <desc class="value">1948: 0.3333333333</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">174.860202949</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Beckett: MercierCamier (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="115.36118121" r="5"/>
+          <desc class="value">1970: 0.3557483731</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">115.36118121</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: BleHerbe (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="144.601244124" r="5"/>
+          <desc class="value">1923: 0.3447327773</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">144.601244124</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Echenoz: MeridienGreenwich (1979)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="645.748883375" cy="220.116062789" r="5"/>
+          <desc class="value">1979: 0.3162841135</desc>
+          <desc class="x left top">645.748883375</desc>
+          <desc class="y left top">220.116062789</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: VoulezVousMourir (1973)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="581.431265509" cy="40.4506063561" r="5"/>
+          <desc class="value">1973: 0.3839694004</desc>
+          <desc class="x left">581.431265509</desc>
+          <desc class="y left">40.4506063561</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: RebeccaRosiers (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="204.962113303" r="5"/>
+          <desc class="value">1957: 0.3219930541</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">204.962113303</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">VianSullivan: OnTueraAffreux (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="118.78667622" r="5"/>
+          <desc class="value">1948: 0.3544578879</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">118.78667622</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Amila: BonneTisane (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="120.842594307" r="5"/>
+          <desc class="value">1955: 0.3536833628</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">120.842594307</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: HeuresOuvrables (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="123.270469411" r="5"/>
+          <desc class="value">1963: 0.3527687105</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">123.270469411</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Georgiques (1981)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="667.18808933" cy="315.256746645" r="5"/>
+          <desc class="value">1981: 0.2804418063</desc>
+          <desc class="x left top">667.18808933</desc>
+          <desc class="y left top">315.256746645</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: ChateauLAutre (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="248.971198639" r="5"/>
+          <desc class="value">1957: 0.3054135311</desc>
+          <desc class="x left top">409.917617866</desc>
+          <desc class="y left top">248.971198639</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: Concerto (1976)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="613.590074442" cy="265.253115119" r="5"/>
+          <desc class="value">1976: 0.299279652</desc>
+          <desc class="x left top">613.590074442</desc>
+          <desc class="y left top">265.253115119</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">RobbeGrillet: Voyeur (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="161.518465423" r="5"/>
+          <desc class="value">1953: 0.3383595601</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">161.518465423</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">RobbeGrillet: Djinn (1981)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="667.18808933" cy="122.108802115" r="5"/>
+          <desc class="value">1981: 0.3532063449</desc>
+          <desc class="x left">667.18808933</desc>
+          <desc class="y left">122.108802115</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: SanAntonioMac (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="254.118627053" r="5"/>
+          <desc class="value">1961: 0.3034743427</desc>
+          <desc class="x left top">452.796029777</desc>
+          <desc class="y left top">254.118627053</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: MortCredit (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="185.082107177" r="5"/>
+          <desc class="value">1936: 0.3294824399</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">185.082107177</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Bataille (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="201.743455" r="5"/>
+          <desc class="value">1969: 0.3232056178</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">201.743455</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Perec: HommeQuiDort (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="169.818461226" r="5"/>
+          <desc class="value">1967: 0.3352327064</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">169.818461226</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: NaissanceJour (1928)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="99.0491315136" cy="180.764077196" r="5"/>
+          <desc class="value">1928: 0.3311091694</desc>
+          <desc class="x ">99.0491315136</desc>
+          <desc class="y ">180.764077196</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: RatsMontsouris (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="185.183635448" r="5"/>
+          <desc class="value">1955: 0.3294441912</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">185.183635448</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: Ravissement (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="98.0117933897" r="5"/>
+          <desc class="value">1964: 0.3622844002</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">98.0117933897</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: Incroyant (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="120.717704185" r="5"/>
+          <desc class="value">1970: 0.3537304126</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">120.717704185</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: Coma (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="104.494168578" r="5"/>
+          <desc class="value">1959: 0.3598422979</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">104.494168578</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: GalaEmplumes (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="224.67756053" r="5"/>
+          <desc class="value">1963: 0.3145656625</desc>
+          <desc class="x left top">474.235235732</desc>
+          <desc class="y left top">224.67756053</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: PainFossoyeurs (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="81.4365489791" r="5"/>
+          <desc class="value">1956: 0.3685287846</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">81.4365489791</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: BourreauPleure (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="75.6417086519" r="5"/>
+          <desc class="value">1956: 0.3707118722</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">75.6417086519</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Modiano: Jeunesse (1981)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="667.18808933" cy="155.740957158" r="5"/>
+          <desc class="value">1981: 0.3405361182</desc>
+          <desc class="x left">667.18808933</desc>
+          <desc class="y left">155.740957158</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: PassezMoiJoconde (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="185.164593672" r="5"/>
+          <desc class="value">1954: 0.3294513648</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">185.164593672</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: IleTrenteCercueils (1920)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="191.346655546" r="5"/>
+          <desc class="value">1920: 0.3271223994</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">191.346655546</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: MarinGibraltar (1952)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="356.319602978" cy="97.3627492711" r="5"/>
+          <desc class="value">1952: 0.3625289143</desc>
+          <desc class="x left">356.319602978</desc>
+          <desc class="y left">97.3627492711</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: Toutounier (1939)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="216.964764268" cy="133.849560378" r="5"/>
+          <desc class="value">1939: 0.3487832543</desc>
+          <desc class="x ">216.964764268</desc>
+          <desc class="y ">133.849560378</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: RouteFlandres (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="238.481295525" r="5"/>
+          <desc class="value">1960: 0.3093653876</desc>
+          <desc class="x left top">442.076426799</desc>
+          <desc class="y left top">238.481295525</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">RobbeGrillet: Jalousie (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="142.910951455" r="5"/>
+          <desc class="value">1957: 0.3453695605</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">142.910951455</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">LeClezio: ProcesVerbal (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="131.758795011" r="5"/>
+          <desc class="value">1963: 0.3495709074</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">131.758795011</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: CelleQui (1952)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="356.319602978" cy="84.1708125768" r="5"/>
+          <desc class="value">1952: 0.3674987067</desc>
+          <desc class="x left">356.319602978</desc>
+          <desc class="y left">84.1708125768</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Audoux: Atelier (1920)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="65.358946442" r="5"/>
+          <desc class="value">1920: 0.3745856926</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">65.358946442</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: EnvahissantCadavre (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="202.096364665" r="5"/>
+          <desc class="value">1959: 0.3230726663</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">202.096364665</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: MachineAssassiner (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="145.886707124" r="5"/>
+          <desc class="value">1923: 0.3442485054</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">145.886707124</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: FilsTroisPeres (1925)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="66.8903225806" cy="155.606059856" r="5"/>
+          <desc class="value">1925: 0.340586938</desc>
+          <desc class="x ">66.8903225806</desc>
+          <desc class="y ">155.606059856</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Corrida (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="195.619600665" r="5"/>
+          <desc class="value">1956: 0.3255126547</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">195.619600665</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Histoire (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="261.483761234" r="5"/>
+          <desc class="value">1967: 0.300699679</desc>
+          <desc class="x left top">517.113647643</desc>
+          <desc class="y left top">261.483761234</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bernanos: Imposture (1927)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="88.329528536" cy="149.026168294" r="5"/>
+          <desc class="value">1927: 0.3430657776</desc>
+          <desc class="x ">88.329528536</desc>
+          <desc class="y ">149.026168294</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bourget: Laborantine (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="183.195520642" r="5"/>
+          <desc class="value">1934: 0.3301931728</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">183.195520642</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: DroleEpreuve (1968)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="527.83325062" cy="203.803486118" r="5"/>
+          <desc class="value">1968: 0.3224295432</desc>
+          <desc class="x left">527.83325062</desc>
+          <desc class="y left">203.803486118</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Beckett: Malone (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="136.520840067" r="5"/>
+          <desc class="value">1951: 0.3477769043</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">136.520840067</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">VianSullivan: JiraiCracher (1946)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="292.001985112" cy="100.954547932" r="5"/>
+          <desc class="value">1946: 0.3611757776</desc>
+          <desc class="x ">292.001985112</desc>
+          <desc class="y ">100.954547932</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: AlbertineR6 (1925)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="66.8903225806" cy="157.3118825" r="5"/>
+          <desc class="value">1925: 0.3399443042</desc>
+          <desc class="x ">66.8903225806</desc>
+          <desc class="y ">157.3118825</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: SiropGuepes (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="228.275328459" r="5"/>
+          <desc class="value">1960: 0.313210277</desc>
+          <desc class="x left top">442.076426799</desc>
+          <desc class="y left top">228.275328459</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Camus: Etranger (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="7.98189362252" r="5"/>
+          <desc class="value">1942: 0.396201324</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">7.98189362252</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: PlombTripes (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="188.600948726" r="5"/>
+          <desc class="value">1953: 0.3281567883</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">188.600948726</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Japrisot: EteMeurtrier (1977)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="624.309677419" cy="43.9798195361" r="5"/>
+          <desc class="value">1977: 0.3826398415</desc>
+          <desc class="x left">624.309677419</desc>
+          <desc class="y left">43.9798195361</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: BurmaDansIle (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="178.367425287" r="5"/>
+          <desc class="value">1970: 0.332012059</desc>
+          <desc class="x left">549.272456576</desc>
+          <desc class="y left">178.367425287</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Perec: Choses (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="231.551876831" r="5"/>
+          <desc class="value">1965: 0.3119759044</desc>
+          <desc class="x left top">495.674441687</desc>
+          <desc class="y left top">231.551876831</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bernanos: SoleilSatan (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="133.52586557" r="5"/>
+          <desc class="value">1926: 0.3489051997</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">133.52586557</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Palace (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="272.136979384" r="5"/>
+          <desc class="value">1962: 0.2966862969</desc>
+          <desc class="x left top">463.515632754</desc>
+          <desc class="y left top">272.136979384</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: PositionTireur (1981)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="667.18808933" cy="139.997918234" r="5"/>
+          <desc class="value">1981: 0.3464669862</desc>
+          <desc class="x left">667.18808933</desc>
+          <desc class="y left">139.997918234</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Amila: NefDingues (1972)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="201.059168889" r="5"/>
+          <desc class="value">1972: 0.3234634086</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">201.059168889</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: JaiEssaye (1973)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="581.431265509" cy="274.272956229" r="5"/>
+          <desc class="value">1973: 0.2958816113</desc>
+          <desc class="x left top">581.431265509</desc>
+          <desc class="y left top">274.272956229</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: Detruire (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="39.7863292939" r="5"/>
+          <desc class="value">1969: 0.3842196532</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">39.7863292939</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: ClientesMorgue (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="158.635732719" r="5"/>
+          <desc class="value">1953: 0.3394455707</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">158.635732719</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Tournier: RoiAulnes (1970)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="549.272456576" cy="300.844918924" r="5"/>
+          <desc class="value">1970: 0.2858711677</desc>
+          <desc class="x left top">549.272456576</desc>
+          <desc class="y left top">300.844918924</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malraux: ConditionHumaine (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="146.826569416" r="5"/>
+          <desc class="value">1933: 0.3438944315</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">146.826569416</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: CagliostroSeVenge (1935)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="174.086352357" cy="171.485764194" r="5"/>
+          <desc class="value">1935: 0.3346045841</desc>
+          <desc class="x ">174.086352357</desc>
+          <desc class="y ">171.485764194</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Japrisot: DameAuto (1966)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="506.394044665" cy="68.9381923309" r="5"/>
+          <desc class="value">1966: 0.3732372849</desc>
+          <desc class="x left">506.394044665</desc>
+          <desc class="y left">68.9381923309</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: GangMysterieux (1952)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="356.319602978" cy="178.106768804" r="5"/>
+          <desc class="value">1952: 0.332110256</desc>
+          <desc class="x left">356.319602978</desc>
+          <desc class="y left">178.106768804</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: BurmaEnDirect (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="181.429825606" r="5"/>
+          <desc class="value">1962: 0.3308583623</desc>
+          <desc class="x left">463.515632754</desc>
+          <desc class="y left">181.429825606</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: Nada (1972)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="205.752987017" r="5"/>
+          <desc class="value">1972: 0.3216951086</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">205.752987017</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: Seconde (1929)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="109.768734491" cy="145.484394114" r="5"/>
+          <desc class="value">1929: 0.3444000686</desc>
+          <desc class="x ">109.768734491</desc>
+          <desc class="y ">145.484394114</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Beckett: Murphy (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="208.435354765" r="5"/>
+          <desc class="value">1947: 0.3206845814</desc>
+          <desc class="x top">302.721588089</desc>
+          <desc class="y top">208.435354765</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: GrandsChemins (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="117.733031243" r="5"/>
+          <desc class="value">1951: 0.3548548271</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">117.733031243</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Pelot: BalladePresqueHomme (1974)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="592.150868486" cy="135.290887445" r="5"/>
+          <desc class="value">1974: 0.3482402638</desc>
+          <desc class="x left">592.150868486</desc>
+          <desc class="y left">135.290887445</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Vian: ArracheCoeur (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="129.97353156" r="5"/>
+          <desc class="value">1953: 0.3502434689</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">129.97353156</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: Initiation (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="170.432771409" r="5"/>
+          <desc class="value">1971: 0.3350012776</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">170.432771409</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: FaisMoi (1978)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="635.029280397" cy="297.729199985" r="5"/>
+          <desc class="value">1978: 0.2870449511</desc>
+          <desc class="x left top">635.029280397</desc>
+          <desc class="y left top">297.729199985</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: Piege (1981)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="667.18808933" cy="79.9099095184" r="5"/>
+          <desc class="value">1981: 0.3691039148</desc>
+          <desc class="x left">667.18808933</desc>
+          <desc class="y left">79.9099095184</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Johnny (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="182.794654294" r="5"/>
+          <desc class="value">1941: 0.330344191</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">182.794654294</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">LeClezio: Desert (1980)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="656.468486352" cy="111.277748169" r="5"/>
+          <desc class="value">1980: 0.357286723</desc>
+          <desc class="x left">656.468486352</desc>
+          <desc class="y left">111.277748169</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bernanos: MauvaisReve (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="156.435906887" r="5"/>
+          <desc class="value">1950: 0.3402743101</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">156.435906887</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: MoiVousConnaissez (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="275.42135751" r="5"/>
+          <desc class="value">1971: 0.2954489746</desc>
+          <desc class="x left top">559.992059553</desc>
+          <desc class="y left top">275.42135751</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Modiano: RueBoutiques (1978)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="635.029280397" cy="129.759093113" r="5"/>
+          <desc class="value">1978: 0.3503242542</desc>
+          <desc class="x left">635.029280397</desc>
+          <desc class="y left">129.759093113</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: Tenebreuses2SangNeva (1925)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="66.8903225806" cy="130.8814314" r="5"/>
+          <desc class="value">1925: 0.3499014362</desc>
+          <desc class="x ">66.8903225806</desc>
+          <desc class="y ">130.8814314</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: Victimes (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="111.065592261" r="5"/>
+          <desc class="value">1964: 0.3573666484</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">111.065592261</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: DemeureMysterieuse (1929)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="109.768734491" cy="200.782761319" r="5"/>
+          <desc class="value">1929: 0.3235675395</desc>
+          <desc class="x ">109.768734491</desc>
+          <desc class="y ">200.782761319</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: RouletabilleBohémiens (1922)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="34.7315136476" cy="137.394458816" r="5"/>
+          <desc class="value">1922: 0.3474477863</desc>
+          <desc class="x ">34.7315136476</desc>
+          <desc class="y ">137.394458816</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: AffaireNGustro (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="190.386752087" r="5"/>
+          <desc class="value">1971: 0.3274840234</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">190.386752087</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: MortDit (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="89.18451721" r="5"/>
+          <desc class="value">1967: 0.365609896</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">89.18451721</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: LaissezTomber (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="190.160086301" r="5"/>
+          <desc class="value">1950: 0.3275694151</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">190.160086301</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: BarragePacifique (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="121.689471327" r="5"/>
+          <desc class="value">1950: 0.3533643192</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">121.689471327</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Pelot: JeSuisLaBrume (1973)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="581.431265509" cy="86.2347340186" r="5"/>
+          <desc class="value">1973: 0.3667211665</desc>
+          <desc class="x left">581.431265509</desc>
+          <desc class="y left">86.2347340186</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Roussel: NouvellesImpressions (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="285.424908547" r="5"/>
+          <desc class="value">1932: 0.2916803413</desc>
+          <desc class="x top">141.927543424</desc>
+          <desc class="y top">285.424908547</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malraux: NoyersAltenburg (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="210.574186444" r="5"/>
+          <desc class="value">1943: 0.3198788203</desc>
+          <desc class="x top">259.843176179</desc>
+          <desc class="y top">210.574186444</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: MaisonClaudine (1922)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="34.7315136476" cy="188.321751622" r="5"/>
+          <desc class="value">1922: 0.3282619701</desc>
+          <desc class="x ">34.7315136476</desc>
+          <desc class="y ">188.321751622</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: Magiciennes (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="98.9245980748" r="5"/>
+          <desc class="value">1957: 0.3619405197</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">98.9245980748</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: JourneesEntieres (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="112.104703735" r="5"/>
+          <desc class="value">1954: 0.3569751844</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">112.104703735</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: DrolePistolet (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="142.591429401" r="5"/>
+          <desc class="value">1969: 0.3454899339</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">142.591429401</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: VieTranquille (1944)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="270.562779156" cy="25.0686349385" r="5"/>
+          <desc class="value">1944: 0.3897642436</desc>
+          <desc class="x ">270.562779156</desc>
+          <desc class="y ">25.0686349385</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: ParisMourir (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="145.731094697" r="5"/>
+          <desc class="value">1969: 0.3443071292</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">145.731094697</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: SodomeR4c (1921)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="24.01191067" cy="171.456554646" r="5"/>
+          <desc class="value">1921: 0.3346155882</desc>
+          <desc class="x ">24.01191067</desc>
+          <desc class="y ">171.456554646</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Butor: Modification (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="200.040598676" r="5"/>
+          <desc class="value">1957: 0.3238471341</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">200.040598676</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: VisagesOmbre (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="67.0640975158" r="5"/>
+          <desc class="value">1953: 0.3739433118</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">67.0640975158</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: ChapeletRouge (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="150.417373994" r="5"/>
+          <desc class="value">1934: 0.3425416693</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">150.417373994</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault3 (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="108.544680655" r="5"/>
+          <desc class="value">1923: 0.3583163503</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">108.544680655</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault1 (1922)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="34.7315136476" cy="88.2652678487" r="5"/>
+          <desc class="value">1922: 0.3659562044</desc>
+          <desc class="x ">34.7315136476</desc>
+          <desc class="y ">88.2652678487</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: Louves (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="122.499873373" r="5"/>
+          <desc class="value">1955: 0.3530590168</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">122.499873373</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">RobbeGrillet: Gommes (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="101.850502863" r="5"/>
+          <desc class="value">1953: 0.3608382449</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">101.850502863</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Amila: PitieRats (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="119.018435049" r="5"/>
+          <desc class="value">1964: 0.3543705775</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">119.018435049</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">LeRouge: DameNoire (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="140.603948737" r="5"/>
+          <desc class="value">1923: 0.3462386766</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">140.603948737</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: Accident (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="130.728078153" r="5"/>
+          <desc class="value">1961: 0.3499592089</desc>
+          <desc class="x left">452.796029777</desc>
+          <desc class="y left">130.728078153</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">LeRouge: ValleeDesespoir (1928)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="99.0491315136" cy="179.619234171" r="5"/>
+          <desc class="value">1928: 0.3315404656</desc>
+          <desc class="x ">99.0491315136</desc>
+          <desc class="y ">179.619234171</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: MillardsLupin (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="168.245601872" r="5"/>
+          <desc class="value">1941: 0.335825249</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">168.245601872</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: PrisonniereR5a (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="162.630629568" r="5"/>
+          <desc class="value">1923: 0.337940575</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">162.630629568</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: SanAntonioRenvoie (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="248.354183333" r="5"/>
+          <desc class="value">1960: 0.305645979</desc>
+          <desc class="x left top">442.076426799</desc>
+          <desc class="y left top">248.354183333</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: ModeratoCantabile (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="55.8423460543" r="5"/>
+          <desc class="value">1958: 0.3781708772</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">55.8423460543</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Audoux: DouceLumiere (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="77.1830329176" r="5"/>
+          <desc class="value">1937: 0.3701312098</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">77.1830329176</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Audoux: VilleMoulin (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="109.444464063" r="5"/>
+          <desc class="value">1926: 0.3579773753</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">109.444464063</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Amila: LuneOmaha (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="143.493193275" r="5"/>
+          <desc class="value">1964: 0.3451502128</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">143.493193275</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: PrisonniereR5b (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="175.110927638" r="5"/>
+          <desc class="value">1923: 0.3332388779</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">175.110927638</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Ossements (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="183.616540972" r="5"/>
+          <desc class="value">1957: 0.330034562</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">183.616540972</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Pelot: DeliriumCircus (1977)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="624.309677419" cy="192.488978461" r="5"/>
+          <desc class="value">1977: 0.3266920526</desc>
+          <desc class="x left">624.309677419</desc>
+          <desc class="y left">192.488978461</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Beckett: Molloy (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="159.340834824" r="5"/>
+          <desc class="value">1951: 0.3391799379</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">159.340834824</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: MorguePleine (1973)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="581.431265509" cy="60.6950930464" r="5"/>
+          <desc class="value">1973: 0.376342704</desc>
+          <desc class="x left">581.431265509</desc>
+          <desc class="y left">60.6950930464</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: MauvaisOeil (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="60.7122868131" r="5"/>
+          <desc class="value">1956: 0.3763362266</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">60.7122868131</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Macchabee (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="193.186873805" r="5"/>
+          <desc class="value">1949: 0.3264291348</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">193.186873805</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: ReglezLuiCompte (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="194.404102179" r="5"/>
+          <desc class="value">1949: 0.3259705689</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">194.404102179</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Vian: HerbeRouge (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="108.548588233" r="5"/>
+          <desc class="value">1950: 0.3583148782</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">108.548588233</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: Odile (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="191.883858691" r="5"/>
+          <desc class="value">1937: 0.3269200191</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">191.883858691</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: DingosChateaux (1972)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="130.538596071" r="5"/>
+          <desc class="value">1972: 0.3500305924</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">130.538596071</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Soleil (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="128.604234415" r="5"/>
+          <desc class="value">1949: 0.3507593236</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">128.604234415</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: TempsRetrouveR7b (1927)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="88.329528536" cy="176.506451025" r="5"/>
+          <desc class="value">1927: 0.332713143</desc>
+          <desc class="x ">88.329528536</desc>
+          <desc class="y ">176.506451025</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: Tenebreuses1FinMonde (1924)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="56.170719603" cy="122.103565467" r="5"/>
+          <desc class="value">1924: 0.3532083177</desc>
+          <desc class="x ">56.170719603</desc>
+          <desc class="y ">122.103565467</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: SodomeR4a (1921)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="24.01191067" cy="179.306951528" r="5"/>
+          <desc class="value">1921: 0.3316581117</desc>
+          <desc class="x ">24.01191067</desc>
+          <desc class="y ">179.306951528</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: Malefices (1961)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="452.796029777" cy="122.220732277" r="5"/>
+          <desc class="value">1961: 0.3531641775</desc>
+          <desc class="x left">452.796029777</desc>
+          <desc class="y left">122.220732277</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: ChantMonde (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="59.1055301971" r="5"/>
+          <desc class="value">1934: 0.3769415393</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">59.1055301971</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: CentVingtRueGare (1943)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="259.843176179" cy="176.482598104" r="5"/>
+          <desc class="value">1943: 0.3327221291</desc>
+          <desc class="x ">259.843176179</desc>
+          <desc class="y ">176.482598104</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: QuedOs (1976)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="613.590074442" cy="95.3387084278" r="5"/>
+          <desc class="value">1976: 0.3632914303</desc>
+          <desc class="x left">613.590074442</desc>
+          <desc class="y left">95.3387084278</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: CoeurPerdu (1959)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="431.356823821" cy="80.903906135" r="5"/>
+          <desc class="value">1959: 0.3687294469</desc>
+          <desc class="x left">431.356823821</desc>
+          <desc class="y left">80.903906135</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: FinDeCheri (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="135.764744882" r="5"/>
+          <desc class="value">1926: 0.3480617477</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">135.764744882</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Modiano: VillaTriste (1975)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="602.870471464" cy="168.597957293" r="5"/>
+          <desc class="value">1975: 0.3356925063</desc>
+          <desc class="x left">602.870471464</desc>
+          <desc class="y left">168.597957293</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Abattoir (1972)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="203.649705509" r="5"/>
+          <desc class="value">1972: 0.3224874769</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">203.649705509</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: OnMeurtPas (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="79.9968912798" r="5"/>
+          <desc class="value">1956: 0.3690711462</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">79.9968912798</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: BarreYVa (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="189.108319329" r="5"/>
+          <desc class="value">1931: 0.3279656468</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">189.108319329</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Galopin: MemoiresCambrioleur (1922)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="34.7315136476" cy="156.766427812" r="5"/>
+          <desc class="value">1922: 0.3401497931</desc>
+          <desc class="x ">34.7315136476</desc>
+          <desc class="y ">156.766427812</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bourget: DanseurMondain (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="150.072529797" r="5"/>
+          <desc class="value">1926: 0.3426715823</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">150.072529797</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Herbe (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="221.305952984" r="5"/>
+          <desc class="value">1958: 0.3158358467</desc>
+          <desc class="x left top">420.637220844</desc>
+          <desc class="y left top">221.305952984</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: Maldonne (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="106.499312045" r="5"/>
+          <desc class="value">1962: 0.3590869011</desc>
+          <desc class="x left">463.515632754</desc>
+          <desc class="y left">106.499312045</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: FievreMarais (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="179.624718477" r="5"/>
+          <desc class="value">1955: 0.3315383995</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">179.624718477</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: FormidableEvenement (1921)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="24.01191067" cy="201.969360559" r="5"/>
+          <desc class="value">1921: 0.3231205125</desc>
+          <desc class="x ">24.01191067</desc>
+          <desc class="y ">201.969360559</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: GrandTroupeau (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="49.734757764" r="5"/>
+          <desc class="value">1931: 0.3804717862</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">49.734757764</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: EntreMorts (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="90.1393305453" r="5"/>
+          <desc class="value">1954: 0.3652501896</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">90.1393305453</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: FeuVertPoissonsRouges (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="167.972508085" r="5"/>
+          <desc class="value">1967: 0.3359281315</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">167.972508085</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Tournier: Gaspard (1980)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="656.468486352" cy="271.887795056" r="5"/>
+          <desc class="value">1980: 0.296780172</desc>
+          <desc class="x left top">656.468486352</desc>
+          <desc class="y left top">271.887795056</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: AubergeBanlieue (1945)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="281.282382134" cy="171.661852849" r="5"/>
+          <desc class="value">1945: 0.3345382463</desc>
+          <desc class="x ">281.282382134</desc>
+          <desc class="y ">171.661852849</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: CroqueMort (1969)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="538.552853598" cy="182.424040151" r="5"/>
+          <desc class="value">1969: 0.3304838123</desc>
+          <desc class="x left">538.552853598</desc>
+          <desc class="y left">182.424040151</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: CimetiereDurs (1968)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="527.83325062" cy="147.1296282" r="5"/>
+          <desc class="value">1968: 0.3437802603</desc>
+          <desc class="x left">527.83325062</desc>
+          <desc class="y left">147.1296282</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: RudeHiver (1939)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="216.964764268" cy="161.459508275" r="5"/>
+          <desc class="value">1939: 0.338381771</desc>
+          <desc class="x ">216.964764268</desc>
+          <desc class="y ">161.459508275</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: PierrotMonAmi (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="166.811128528" r="5"/>
+          <desc class="value">1942: 0.3363656575</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">166.811128528</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: Victor (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="175.887258028" r="5"/>
+          <desc class="value">1933: 0.3329464113</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">175.887258028</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: CinquiemeProcede (1948)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="313.441191067" cy="184.292787098" r="5"/>
+          <desc class="value">1948: 0.3297798001</desc>
+          <desc class="x ">313.441191067</desc>
+          <desc class="y ">184.292787098</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: Duo (1934)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="163.36674938" cy="137.710823963" r="5"/>
+          <desc class="value">1934: 0.3473286022</desc>
+          <desc class="x ">163.36674938</desc>
+          <desc class="y ">137.710823963</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Perec: CabinetAmateur (1979)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="645.748883375" cy="407.076574748" r="5"/>
+          <desc class="value">1979: 0.2458505636</desc>
+          <desc class="x left top">645.748883375</desc>
+          <desc class="y left top">407.076574748</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Galopin: Aviateur (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="140.232142492" r="5"/>
+          <desc class="value">1926: 0.346378747</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">140.232142492</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Nuit (1955)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="388.478411911" cy="192.416049221" r="5"/>
+          <desc class="value">1955: 0.3267195272</desc>
+          <desc class="x left">388.478411911</desc>
+          <desc class="y left">192.416049221</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Butor: EmploiTemps (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="245.893884173" r="5"/>
+          <desc class="value">1956: 0.3065728464</desc>
+          <desc class="x left top">399.198014888</desc>
+          <desc class="y left top">245.893884173</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Amila: NocesSoufre (1964)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="484.95483871" cy="118.874193378" r="5"/>
+          <desc class="value">1964: 0.3544249176</desc>
+          <desc class="x left">484.95483871</desc>
+          <desc class="y left">118.874193378</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Perec: Vie (1978)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="635.029280397" cy="305.45979501" r="5"/>
+          <desc class="value">1978: 0.2841326075</desc>
+          <desc class="x left top">635.029280397</desc>
+          <desc class="y left top">305.45979501</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: HommagesDonzelle (1952)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="356.319602978" cy="193.237077458" r="5"/>
+          <desc class="value">1952: 0.3264102216</desc>
+          <desc class="x left">356.319602978</desc>
+          <desc class="y left">193.237077458</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Simon: Tryptique (1973)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="581.431265509" cy="229.064275327" r="5"/>
+          <desc class="value">1973: 0.3129130574</desc>
+          <desc class="x left top">581.431265509</desc>
+          <desc class="y left top">229.064275327</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Camus: MortHeureuse (1938)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="206.24516129" cy="94.5145633656" r="5"/>
+          <desc class="value">1938: 0.3636019101</desc>
+          <desc class="x ">206.24516129</desc>
+          <desc class="y ">94.5145633656</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Camus: Chute (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="190.801162104" r="5"/>
+          <desc class="value">1956: 0.3273279029</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">190.801162104</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: GuermantesR3b (1920)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="152.845840238" r="5"/>
+          <desc class="value">1920: 0.3416267943</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">152.845840238</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Sueur (1949)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="324.160794045" cy="113.63856615" r="5"/>
+          <desc class="value">1949: 0.3563973331</desc>
+          <desc class="x ">324.160794045</desc>
+          <desc class="y ">113.63856615</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Galopin: Bacille (1928)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="99.0491315136" cy="123.880576048" r="5"/>
+          <desc class="value">1928: 0.3525388653</desc>
+          <desc class="x ">99.0491315136</desc>
+          <desc class="y ">123.880576048</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Bernanos: Mouchette (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="109.678168585" r="5"/>
+          <desc class="value">1937: 0.3578893319</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">109.678168585</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: BurmaBercail (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="204.83379446" r="5"/>
+          <desc class="value">1967: 0.3220413956</desc>
+          <desc class="x left">517.113647643</desc>
+          <desc class="y left">204.83379446</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: IngenieurChiffres (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="93.3597697006" r="5"/>
+          <desc class="value">1958: 0.364036955</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">93.3597697006</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: Fatale (1977)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="624.309677419" cy="163.272196174" r="5"/>
+          <desc class="value">1977: 0.3376988779</desc>
+          <desc class="x left">624.309677419</desc>
+          <desc class="y left">163.272196174</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Camus: PremierHomme (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="173.713096761" r="5"/>
+          <desc class="value">1960: 0.3337654821</desc>
+          <desc class="x left">442.076426799</desc>
+          <desc class="y left">173.713096761</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malraux: Espoir (1937)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="195.525558313" cy="191.199962249" r="5"/>
+          <desc class="value">1937: 0.3271776631</desc>
+          <desc class="x ">195.525558313</desc>
+          <desc class="y ">191.199962249</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault6 (1929)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="109.768734491" cy="152.400157389" r="5"/>
+          <desc class="value">1929: 0.3417946962</desc>
+          <desc class="x ">109.768734491</desc>
+          <desc class="y ">152.400157389</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: DemoiselleYeuxVerts (1927)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="88.329528536" cy="185.578676663" r="5"/>
+          <desc class="value">1927: 0.3292953675</desc>
+          <desc class="x ">88.329528536</desc>
+          <desc class="y ">185.578676663</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leroux: Poupee (1923)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="45.4511166253" cy="136.73425364" r="5"/>
+          <desc class="value">1923: 0.3476965051</desc>
+          <desc class="x ">45.4511166253</desc>
+          <desc class="y ">136.73425364</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Galopin: Aviateur2 (1926)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="77.6099255583" cy="130.167382294" r="5"/>
+          <desc class="value">1926: 0.3501704396</desc>
+          <desc class="x ">77.6099255583</desc>
+          <desc class="y ">130.167382294</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: Delivrez (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="118.451533411" r="5"/>
+          <desc class="value">1956: 0.3545841461</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">118.451533411</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: PeauTorpedo (1968)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="527.83325062" cy="132.030853573" r="5"/>
+          <desc class="value">1968: 0.3494684149</desc>
+          <desc class="x left">527.83325062</desc>
+          <desc class="y left">132.030853573</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Beckett: Innommable (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="96.939729895" r="5"/>
+          <desc class="value">1953: 0.3626882782</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">96.939729895</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: VoyageNuit (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="188.509307389" r="5"/>
+          <desc class="value">1932: 0.3281913123</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">188.509307389</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: TempsRetrouveR7a (1927)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="88.329528536" cy="194.089485501" r="5"/>
+          <desc class="value">1927: 0.3260890943</desc>
+          <desc class="x ">88.329528536</desc>
+          <desc class="y ">194.089485501</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Japrisot: Piège pour Cendrillon (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="67.136510736" r="5"/>
+          <desc class="value">1963: 0.3739160316</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">67.136510736</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: DeuxCavaliersOrage (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="51.1713551778" r="5"/>
+          <desc class="value">1965: 0.3799305775</desc>
+          <desc class="x left">495.674441687</desc>
+          <desc class="y left">51.1713551778</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: TueurTriste (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="43.3066411282" r="5"/>
+          <desc class="value">1958: 0.3828934477</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">43.3066411282</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault2 (1922)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="34.7315136476" cy="81.7251953023" r="5"/>
+          <desc class="value">1922: 0.368420043</desc>
+          <desc class="x ">34.7315136476</desc>
+          <desc class="y ">81.7251953023</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: Chiendent (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="157.213742601" r="5"/>
+          <desc class="value">1933: 0.3399812764</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">157.213742601</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: FleursBleues (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="205.316209761" r="5"/>
+          <desc class="value">1965: 0.3218596555</desc>
+          <desc class="x left">495.674441687</desc>
+          <desc class="y left">205.316209761</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: FemmeDeuxSourires (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="167.437412287" r="5"/>
+          <desc class="value">1933: 0.3361297179</desc>
+          <desc class="x ">152.647146402</desc>
+          <desc class="y ">167.437412287</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">VianSullivan: MortMemePeau (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="42.9254276044" r="5"/>
+          <desc class="value">1947: 0.3830370621</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">42.9254276044</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: CassePipe (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="188.965772508" r="5"/>
+          <desc class="value">1957: 0.3280193484</desc>
+          <desc class="x left">409.917617866</desc>
+          <desc class="y left">188.965772508</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: GuermantesR3c (1920)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="193.069703809" r="5"/>
+          <desc class="value">1920: 0.3264732762</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">193.069703809</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Colette: JulieDeCarneilhan (1941)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="238.403970223" cy="126.056722559" r="5"/>
+          <desc class="value">1941: 0.3517190466</desc>
+          <desc class="x ">238.403970223</desc>
+          <desc class="y ">126.056722559</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault7b (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="172.498910888" r="5"/>
+          <desc class="value">1936: 0.3342229018</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">172.498910888</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">RobbeGrillet: Souvenirs (1978)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="635.029280397" cy="229.834982054" r="5"/>
+          <desc class="value">1978: 0.3126227094</desc>
+          <desc class="x left top">635.029280397</desc>
+          <desc class="y left top">229.834982054</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Brouillard (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="201.114022298" r="5"/>
+          <desc class="value">1956: 0.3234427437</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">201.114022298</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: Cite (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="155.433370723" r="5"/>
+          <desc class="value">1950: 0.3406519951</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">155.433370723</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Japrisot: CompartimentTueurs (1962)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="463.515632754" cy="52.0290256163" r="5"/>
+          <desc class="value">1962: 0.3796074677</desc>
+          <desc class="x left">463.515632754</desc>
+          <desc class="y left">52.0290256163</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: OmbreProie (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="81.8279260273" r="5"/>
+          <desc class="value">1951: 0.3683813413</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">81.8279260273</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Magnan: SangAtrides (1977)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="624.309677419" cy="202.433702152" r="5"/>
+          <desc class="value">1977: 0.3229455813</desc>
+          <desc class="x left">624.309677419</desc>
+          <desc class="y left">202.433702152</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Tournier: Meteores (1975)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="602.870471464" cy="278.98015637" r="5"/>
+          <desc class="value">1975: 0.2941082699</desc>
+          <desc class="x left top">602.870471464</desc>
+          <desc class="y left top">278.98015637</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">VianSullivan: EllesPasCompte (1950)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="334.880397022" cy="121.173072762" r="5"/>
+          <desc class="value">1950: 0.3535588618</desc>
+          <desc class="x ">334.880397022</desc>
+          <desc class="y ">121.173072762</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Tournier: Vendredi (1967)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="517.113647643" cy="275.915352736" r="5"/>
+          <desc class="value">1967: 0.295262872</desc>
+          <desc class="x left top">517.113647643</desc>
+          <desc class="y left top">275.915352736</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: GuignolsBand1 (1944)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="270.562779156" cy="228.17464111" r="5"/>
+          <desc class="value">1944: 0.3132482089</desc>
+          <desc class="x top">270.562779156</desc>
+          <desc class="y top">228.17464111</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: AngesPlumer (1957)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="409.917617866" cy="212.971016996" r="5"/>
+          <desc class="value">1957: 0.3189758634</desc>
+          <desc class="x left top">409.917617866</desc>
+          <desc class="y left top">212.971016996</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: EtMonTout (1965)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="495.674441687" cy="115.918204143" r="5"/>
+          <desc class="value">1965: 0.3555385261</desc>
+          <desc class="x left">495.674441687</desc>
+          <desc class="y left">115.918204143</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: PasDeBavards (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="187.679982483" r="5"/>
+          <desc class="value">1956: 0.3285037435</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">187.679982483</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Pelot: PlombNeige (1974)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="592.150868486" cy="109.226767576" r="5"/>
+          <desc class="value">1974: 0.358059388</desc>
+          <desc class="x left">592.150868486</desc>
+          <desc class="y left">109.226767576</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: SalePeau (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="94.9870850966" r="5"/>
+          <desc class="value">1958: 0.3634238972</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">94.9870850966</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Leblanc: MinuitSeptHeures (1931)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="131.207940447" cy="115.062835887" r="5"/>
+          <desc class="value">1931: 0.3558607686</desc>
+          <desc class="x ">131.207940447</desc>
+          <desc class="y ">115.062835887</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: Angelo (1958)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="420.637220844" cy="114.421961555" r="5"/>
+          <desc class="value">1958: 0.3561022049</desc>
+          <desc class="x left">420.637220844</desc>
+          <desc class="y left">114.421961555</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: RoiSansDivertissement (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="147.822437932" r="5"/>
+          <desc class="value">1947: 0.3435192584</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">147.822437932</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Vian: EcumeJours (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="120.065475819" r="5"/>
+          <desc class="value">1947: 0.3539761263</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">120.065475819</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Dard: MarchaitTombe (1963)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="474.235235732" cy="137.467949732" r="5"/>
+          <desc class="value">1963: 0.3474201001</desc>
+          <desc class="x left">474.235235732</desc>
+          <desc class="y left">137.467949732</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Ryck: IntentionsPacifiques (1977)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="624.309677419" cy="115.779516855" r="5"/>
+          <desc class="value">1977: 0.3555907737</desc>
+          <desc class="x left">624.309677419</desc>
+          <desc class="y left">115.779516855</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: BurmaCourtPoupee (1971)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="559.992059553" cy="204.016734321" r="5"/>
+          <desc class="value">1971: 0.3223492063</desc>
+          <desc class="x left">559.992059553</desc>
+          <desc class="y left">204.016734321</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Modiano: Boulevards (1972)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="187.085619501" r="5"/>
+          <desc class="value">1972: 0.3287276576</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">187.085619501</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Proust: GuermantesR3a (1920)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="175.014549216" r="5"/>
+          <desc class="value">1920: 0.3332751865</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">175.014549216</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Renard: MaitreLumiere (1933)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="152.647146402" cy="211.133173651" r="5"/>
+          <desc class="value">1933: 0.3196682333</desc>
+          <desc class="x top">152.647146402</desc>
+          <desc class="y top">211.133173651</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Vian: AutomnePekin (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="125.846819461" r="5"/>
+          <desc class="value">1947: 0.3517981233</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">125.846819461</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Magnan: Commissaire (1978)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="635.029280397" cy="213.893829391" r="5"/>
+          <desc class="value">1978: 0.3186282127</desc>
+          <desc class="x left top">635.029280397</desc>
+          <desc class="y left top">213.893829391</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Duras: PetitsChevaux (1953)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="367.039205955" cy="74.7370673828" r="5"/>
+          <desc class="value">1953: 0.3710526773</desc>
+          <desc class="x left">367.039205955</desc>
+          <desc class="y left">74.7370673828</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault5 (1928)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="99.0491315136" cy="111.408698077" r="5"/>
+          <desc class="value">1928: 0.3572373903</desc>
+          <desc class="x ">99.0491315136</desc>
+          <desc class="y ">111.408698077</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault8 (1940)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="227.684367246" cy="177.246241674" r="5"/>
+          <desc class="value">1940: 0.332434442</desc>
+          <desc class="x ">227.684367246</desc>
+          <desc class="y ">177.246241674</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault4 (1928)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="99.0491315136" cy="129.479291597" r="5"/>
+          <desc class="value">1928: 0.3504296637</desc>
+          <desc class="x ">99.0491315136</desc>
+          <desc class="y ">129.479291597</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Echenoz: UnAn (1975)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="602.870471464" cy="206.00444884" r="5"/>
+          <desc class="value">1975: 0.3216003755</desc>
+          <desc class="x left">602.870471464</desc>
+          <desc class="y left">206.00444884</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: HommeSangBleu (1942)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="249.123573201" cy="161.47211387" r="5"/>
+          <desc class="value">1942: 0.3383770221</desc>
+          <desc class="x ">249.123573201</desc>
+          <desc class="y ">161.47211387</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">MduGard: Thibault7a (1936)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="184.805955335" cy="173.174943864" r="5"/>
+          <desc class="value">1936: 0.3339682202</desc>
+          <desc class="x ">184.805955335</desc>
+          <desc class="y ">173.174943864</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: HussardToit (1951)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="345.6" cy="116.653003945" r="5"/>
+          <desc class="value">1951: 0.3552617053</desc>
+          <desc class="x ">345.6</desc>
+          <desc class="y ">116.653003945</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">BoilNarc: BoisDormant (1956)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="399.198014888" cy="195.329064392" r="5"/>
+          <desc class="value">1956: 0.3256221083</desc>
+          <desc class="x left">399.198014888</desc>
+          <desc class="y left">195.329064392</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Queneau: EnfantsLimon (1938)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="206.24516129" cy="237.617598217" r="5"/>
+          <desc class="value">1938: 0.3096907679</desc>
+          <desc class="x top">206.24516129</desc>
+          <desc class="y top">237.617598217</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: Nord (1960)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="442.076426799" cy="195.365519456" r="5"/>
+          <desc class="value">1960: 0.3256083746</desc>
+          <desc class="x left">442.076426799</desc>
+          <desc class="y left">195.365519456</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Celine: GuignolsBand2 (1944)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="270.562779156" cy="223.026241176" r="5"/>
+          <desc class="value">1944: 0.3151877633</desc>
+          <desc class="x top">270.562779156</desc>
+          <desc class="y top">223.026241176</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Malet: SoleilNait (1954)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="377.758808933" cy="174.551013772" r="5"/>
+          <desc class="value">1954: 0.333449814</desc>
+          <desc class="x left">377.758808933</desc>
+          <desc class="y left">174.551013772</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Giono: SolitudePitie (1932)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="141.927543424" cy="74.5417200849" r="5"/>
+          <desc class="value">1932: 0.3711262704</desc>
+          <desc class="x ">141.927543424</desc>
+          <desc class="y ">74.5417200849</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Camus: Peste (1947)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="302.721588089" cy="132.898102501" r="5"/>
+          <desc class="value">1947: 0.3491416966</desc>
+          <desc class="x ">302.721588089</desc>
+          <desc class="y ">132.898102501</desc>
+        </g>
+        <g class="dots">
+          <desc class="label">Manchette: PetitBleu (1976)</desc>
+          <circle class="dot reactive tooltip-trigger" cx="613.590074442" cy="209.261335893" r="5"/>
+          <desc class="value">1976: 0.3203734099</desc>
+          <desc class="x left top">613.590074442</desc>
+          <desc class="y left top">209.261335893</desc>
+        </g>
+      </g>
+      <g class="series serie-2 color-2">
+        <g class="dots">
+          <circle class="dot reactive tooltip-trigger" cx="120.488337469" cy="79.0160143162" r="2.5"/>
+          <desc class="value">1930: 0.3694406715</desc>
+          <desc class="x ">120.488337469</desc>
+          <desc class="y ">79.0160143162</desc>
+        </g>
+        <g class="dots">
+          <circle class="dot reactive tooltip-trigger" cx="570.711662531" cy="79.0160143162" r="2.5"/>
+          <desc class="value">1972: 0.3694406715</desc>
+          <desc class="x left">570.711662531</desc>
+          <desc class="y left">79.0160143162</desc>
+        </g>
+      </g>
+      <g class="series serie-3 color-3">
+        <g class="dots">
+          <circle class="dot reactive tooltip-trigger" cx="13.2923076923" cy="156.318782262" r="2.5"/>
+          <desc class="value">1920: 0.3403184344</desc>
+          <desc class="x ">13.2923076923</desc>
+          <desc class="y ">156.318782262</desc>
+        </g>
+        <g class="dots">
+          <circle class="dot reactive tooltip-trigger" cx="677.907692308" cy="156.318782262" r="2.5"/>
+          <desc class="value">1982: 0.3403184344</desc>
+          <desc class="x left">677.907692308</desc>
+          <desc class="y left">156.318782262</desc>
+        </g>
+      </g>
+    </g>
+    <g class="plot text-overlay" transform="translate(88, 50)">
+      <g class="series serie-0 color-0"/>
+      <g class="series serie-1 color-1"/>
+      <g class="series serie-2 color-2"/>
+      <g class="series serie-3 color-3"/>
+    </g>
+    <g class="plot tooltip-overlay" transform="translate(88, 50)">
+      <g class="tooltip" style="opacity: 0" transform="translate(0 0)">
+        <rect class="tooltip-box" height="0" rx="0" ry="0" width="0"/>
+        <g class="text"/>
+      </g>
+    </g>
+    <g class="legends" transform="translate(98, 550)">
+      <g class="legend reactive activate-serie" id="activate-serie-0">
+        <rect class="color-0 reactive" height="12" width="12" x="0.0" y="2.0"/>
+        <text x="17.0" y="12.8">simenon</text>
+      </g>
+      <g class="legend reactive activate-serie" id="activate-serie-1">
+        <rect class="color-1 reactive" height="12" width="12" x="345.6" y="2.0"/>
+        <text x="362.6" y="12.8">contemporains</text>
+      </g>
+      <g class="legend reactive activate-serie" id="activate-serie-2">
+        <rect class="color-2 reactive" height="12" width="12" x="0.0" y="26.0"/>
+        <text x="17.0" y="36.8">simenon-mean</text>
+      </g>
+      <g class="legend reactive activate-serie" id="activate-serie-3">
+        <rect class="color-3 reactive" height="12" width="12" x="345.6" y="26.0"/>
+        <text x="362.6" y="36.8">contemporains-mean</text>
+      </g>
+    </g>
+  </g>
+</svg>

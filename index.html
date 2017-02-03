@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- CUSTOMIZE THIS! -->
+<title>Quantitative Textanalyse</title>
+<meta name="author" content="Christof Schöch">
+<!-- END -->
+<meta name="description" content="Slides">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<!-- THIS IS WHERE THE CONTENT GOES! -->
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section data-markdown>
+<script type="text/template">
+# Quantitative Textanalyse:<br/>Methoden im Überblick
+<hr/>
+<br/>
+<p>Workshop Quantitative Textanalyse,<br/>Universität Kassel, 23. Januar 2017
+<br/>
+<br/>
+<hr/>
+<p>Christof Schöch<br/>(CLiGS, Universität Würzburg)</p>
+<p><img height="50" data-src="img/basics/UWUE.jpg"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="100" data-src="img/basics/CLiGS.jpg"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img height="50" data-src="img/basics/BMBF.jpg"></img></p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Überblick
+1. Suche nach Mustern
+2. Kontrastive Analyse
+3. Gruppen finden (Clustering)
+4. Texte zu Kategorien (Klassifikation)
+</script>
+</section>
+
+<section>
+
+<section data-markdown>
+<script type="text/template">
+# 1. Suche nach Mustern
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Reguläre Ausdrücke 
+* Suche nach Mustern von Zeichenketten <!-- .element: class="fragment" data-fragment-index="1" -->
+* Sehr mächtig: Wildcards, Zählzeichen, Position, Klassen, Alternativen, uvm. <!-- .element: class="fragment" data-fragment-index="2" -->
+* Auch für Suchen/Ersetzen (Gruppen) oder Tokenisierung <!-- .element: class="fragment" data-fragment-index="3" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## RegEx: Möglichkeiten
+| Zeichen | Bedeutung                   |
+|---------|-----------------------------|
+| .       | Beliebiges Zeichen          |
+| + * ?   | Quantifizierung             |
+| {1,3}   | numerische Quantifizierung  |
+| [aeiou] | Alternative Zeichen         |
+| \d \w   | Klassen: Zahl, Wort         |
+| \s \b   | Klassen: Space, Wortgrenze  |
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## RegEx: Beispiele
+* "encore?" <!-- .element: class="fragment" data-fragment-index="1" -->
+* "(œil|oeil|yeux)" <!-- .element: class="fragment" data-fragment-index="2" -->
+* "\battend.*?" <!-- .element: class="fragment" data-fragment-index="3" -->
+* "\bpro\w{2,6}er\b" <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## RegEx: Beispiele
+<p><a href="img/regex_attendx.png"><img height="500" data-src="img/regex_attendx.png"></img></a></p>
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## CQP: RegEx on Steroids
+* CQP = Corpus Query Processor (Stefan Evert) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Kann linguistische Annotation nutzen <!-- .element: class="fragment" data-fragment-index="2" -->
+* Reguläre Ausdrücke + Annotations-Bedingungen  <!-- .element: class="fragment" data-fragment-index="3" -->
+* Besonders komfortabel: Nutzung in TXM  <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## CQP: Beispiele
+* [word="attend.*"] <!-- .element: class="fragment" data-fragment-index="1" -->
+* [pos="verb"] <!-- .element: class="fragment" data-fragment-index="2" -->
+* [lemma="attendre"] <!-- .element: class="fragment" data-fragment-index="3" -->
+* [word=".*ois" & pos="verb"] <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## CQP in TXM
+<p><a href="img/regex-txm.png"><img height="500" data-src="img/regex-txm.png"></img></a></p>
+<p>http://textometrie.ens-lyon.fr/</p>
+</script>
+</section>
+
+
+
+</section>
+<section>
+
+
+
+<section data-markdown>
+<script type="text/template">
+# 2. Kontrastive Analyse
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Grundidee
+* Sehr verbreitetes Verfahren: Vergleichende Analysen <!-- .element: class="fragment" data-fragment-index="1" -->
+* Ziel: charakteristische Merkmale einer Textgruppe im Vergleich zu einer anderen Textgruppe ("key words") <!-- .element: class="fragment" data-fragment-index="2" -->
+* Vielzahl von Maßen und Verfahren für die Berechnung <!-- .element: class="fragment" data-fragment-index="3" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Verhältnis der relativen Häufigkeiten (rrf)
+* Zielpartition (ZP) und Vergleichspartition (VP) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Mittlere relative Häufigkeit rf des Types w in ZP und VP <!-- .element: class="fragment" data-fragment-index="2" -->
+* rrf = rfw(ZP) / rfw(VP) <!-- .element: class="fragment" data-fragment-index="3" -->
+* Für alle Types berechnen; absteigend sortieren <!-- .element: class="fragment" data-fragment-index="4" -->
+* Einfach zu berechnen; aber: statistisch zu schlicht  <!-- .element: class="fragment" data-fragment-index="5" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Vergleich: Anteil verbreiteten Vokabulars
+<p><a href="img/1_novel-simenon-vs-contemporains_creation-CommonRatio_scatterplot.svg"><img height="400" data-src="img/1_novel-simenon-vs-contemporains_creation-CommonRatio_scatterplot.svg"></img></a></p>
+<p>Mittelwerte (Simenon/Zeitenossen): 0.37 / 0.34 (=1.09/1.0)</p> <!-- .element: class="fragment" data-fragment-index="1" -->
+<p>Signifikanz (Mann-Whitney p-Wert): 3.4e-30 (&lt; α=0.001)</p> <!-- .element: class="fragment" data-fragment-index="2" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Vergleich: Mittlere Satzlänge in Wörtern
+<p><a href="img/1_novel-simenon-vs-contemporains_creation-SentLenMean_scatterplot.svg"><img height="400" data-src="img/1_novel-simenon-vs-contemporains_creation-SentLenMean_scatterplot.svg"></img></a></p>
+<p>Mittelwerte (Simenon/Zeitenossen): 12.0 / 14.1 (=0.86/1.0)</p> <!-- .element: class="fragment" data-fragment-index="1" -->
+<p>Signifikanz (Mann-Whitney p-Wert): 0.67 (&gt; α=0.001)</p> <!-- .element: class="fragment" data-fragment-index="2" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Alternativen zum rrf
+* Welchs t-Test (berücksichtigt Verteilung; p-Wert; Normalverteilung) <!-- .element: class="fragment" data-fragment-index="1" -->
+* Wilcoxon / Mann-Whitney Rangsummentest (wie t-Test; keine Normalverteilung notwendig) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Craigs Zeta (Inhaltswörter; gut interpretierbar; statistisch einfach) <!-- .element: class="fragment" data-fragment-index="3" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Komödie vs. Tragödie mit Zeta
+<p><a href="img/scoresplot_comedie-tragedie_5000-lemmata-all-15.svg"><img height="500" data-src="img/scoresplot_comedie-tragedie_5000-lemmata-all-15.svg"></img></a></p>
+<p>https://github.com/cligs/pyzeta</p>
+</script>
+</section>
+
+
+
+</section>
+<section>
+
+
+
+<section data-markdown>
+<script type="text/template">
+# 3. Gruppen entdecken (Clustering)
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Grundidee
+* Verfahren aus dem maschinellen Lernen: unüberwacht <!-- .element: class="fragment" data-fragment-index="1" -->
+* Gruppen in einer Datensammlung finden <!-- .element: class="fragment" data-fragment-index="2" -->
+* Cluster Analyse: Merkmale, Vektorraum, Ähnlichkeit, Visualisieren <!-- .element: class="fragment" data-fragment-index="3" -->
+* Anwendung: bspw. stilometrische Autorschaftsattribution <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Wordhäufigkeitsmatrix
+<p><a href="img/stylometry1_freqmatrix.png"><img height="500" data-src="img/stylometry1_freqmatrix.png"></img></a></p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Distanzmatrix
+<p><a href="img/stylometry2_distmatrix.png"><img height="350" data-src="img/stylometry2_distmatrix.png"></img></a></p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Dendrogramm
+<p><a href="img/stylometry3_dendrogram.png"><img height="500" data-src="img/stylometry3_dendrogram.png"></img></a></p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Beispiel: Corneille / Molière
+* 48 Dramen aus der französischen Klassik <!-- .element: class="fragment" data-fragment-index="1" -->
+* 1 Drama umstrittener Autorschaft: Dom Garcie (Molière; evtl. Pierre Corneille) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Grundlage der Ähnlichkeit: 2000 sog. 'most frequent words' <!-- .element: class="fragment" data-fragment-index="3" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Beispiel: stilometrisches Dendrogramm
+<p><a href="img/stylo-dendrogramm.png"><img height="500" data-src="img/stylo-dendrogramm.png"></img></a></p>
+<p>(Schöch, "Corneille, Molière et les autres...", 2014</p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Beispiel: stilometrisches Dendrogramm
+<p><a href="img/threeway_pca.png"><img height="500" data-src="img/threeway_pca.png"></img></a></p>
+<p>(Schöch, "Zeta für die kontrastive Analyse...", 2017</p>
+</script>
+</section>
+
+
+</section>
+<section>
+
+
+
+<section data-markdown>
+<script type="text/template">
+# 4. Texte zu Klassen zuordnen (Klassifikation)
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Grundidee
+* Ebenfalls Verfahren des maschinellen Lernens: überwacht <!-- .element: class="fragment" data-fragment-index="1" -->
+* Texte o.ä. werden vorab festgelegten Klassen zugeordnet <!-- .element: class="fragment" data-fragment-index="2" -->
+* Relevante Merkmale werden modelliert <!-- .element: class="fragment" data-fragment-index="3" -->
+* Trainingskorpus, Evaluationskorpus; Anwendungskorpus <!-- .element: class="fragment" data-fragment-index="4" -->
+* Computer "lernt" aus den Beispielen: Merkmale/Klassen (regelbasiert oder probabilistisch) <!-- .element: class="fragment" data-fragment-index="5" -->
+* Classifier: Regression, Support Vector Machines, uvm. <!-- .element: class="fragment" data-fragment-index="6" -->
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Beispiel: Erkennung direkter Rede
+<p><a href="img/direkte-rede.jpg"><img height="500" data-src="img/direkte-rede.jpg"></img></a></p>
+<p>http://dh2016.adho.org/abstracts/31</p>
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Verwendete Merkmale (Auswahl)
+
+| Merkmal          | Beitr. | Rang | 
+|------------------|--------|------|
+| SPEECHSIGN       | 74     |   1  | 
+| VER:impf         | 71     |   2  | 
+| VER:pres         | 66     |   3  | 
+| VER:simp         | 63     |   4  | 
+| PUNCMARKDOT      | 63     |   5  | 
+| MATCHINGPPER_SON | 59     |   6  | 
+| VERB_MOTION      | 58     |   8  | 
+| SENTENCELENGTH   | 58     |  11  | 
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Beispiel: Erkennung direkter Rede
+<p><a href="img/direct-speech_genres.png"><img height="500" data-src="img/direct-speech_genres.png"></img></a></p>
+<p>http://dh2016.adho.org/abstracts/31</p>
+</script>
+</section>
+
+
+
+</section>
+<section>
+
+
+
+<section data-markdown>
+<script type="text/template">
+# Fazit und Diskussion
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Weitere Verfahren
+* Netzwerkanalyse <!-- .element: class="fragment" data-fragment-index="1" -->
+* Kartierung <!-- .element: class="fragment" data-fragment-index="2" -->
+* Sentiment Analysis <!-- .element: class="fragment" data-fragment-index="3" -->
+* Vektorsemantik (word2vec) <!-- .element: class="fragment" data-fragment-index="4" -->
+* Topic Modeling (siehe Teil 2) <!-- .element: class="fragment" data-fragment-index="5" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Bilanz
+* Vielzahl von Verfahren und Methoden; ständig in Entwicklung <!-- .element: class="fragment" data-fragment-index="1" -->
+* Auswahl für das eigene Methodenrepertoire und Fragestellungen <!-- .element: class="fragment" data-fragment-index="2" -->
+* Stellenwert in der eigenen Forschung: Zentrum oder Ergänzung? <!-- .element: class="fragment" data-fragment-index="3" -->
+* Digitale Methoden: Erleichterung oder Paradigmenwechsel? <!-- .element: class="fragment" data-fragment-index="4" -->
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Lektürehinweise
+<small>
+
+* Adolphs, Svenja. <em>Introducing Electronic Text Analysis: A Practical Guide for Language and Literary Studies</em>. London & New York: Routledge, 2006.
+* Hockey, Susan M. <em></em>Electronic Texts in the Humanities: Principles and Practice</em>. Oxford; New York: Oxford University Press, 2000.
+* Jannidis, Fotis. “Methoden der computergestützten Textanalyse.” In Methoden der literatur- und kulturwissenschaftlichen Textanalyse, hg. Ansgar Nünning and Vera Nünning, 109–32. Stuttgart & Weimar: Metzler, 2010.
+*  Lijffijt, Jefrey et al. “Significance Testing of Word Frequencies in Corpora.” <em>Digital Scholarship in the Humanities</em> 31, no. 2 (2014): 374–97. doi:10.1093/llc/fqu064.
+* Oakes, Michael P. <em>Statistics for Corpus Linguistics</em>. Edinburgh: Edinburgh Univ. Press, 1998.
+* Schöch, Christof. “Quantitative Analyse.” In <em>Digital Humanities: Eine Einführung</em>, hg. Fotis Jannidis, Hubertus Kohle, and Malte Rehbein, 280–99. Stuttgart: Metzler, 2017.
+* Schöch, Christof. “Zeta für die kontrastive Analyse literarischer Texte. Theorie, Implementierung, Fallstudie.” In <em>Quantitative Verfahren in der Literaturwissenschaft. Von einer Scientia Quantitatis zu den Digital Humanities</em>, hg. Andrea Albrecht, Sandra Richter, Marcel Lepper, Marcus Willand, and Toni Bernhart. Berlin: de Gruyter, 2017.
+
+
+</small>
+</script>
+</section>
+
+
+
+</section>
+
+<section data-markdown>
+<script type="text/template">
+###Vielen Dank!
+<br/>
+<br/>
+<br/>
+<hr/>
+<p>Folien: <a href="https://christofs.github.io/topic-modeling-vorlesung/#/">christofs.github.io</a>
+<br/>
+<p>Autor: <a href="http://www.christof-schoech.de">Christof Schöch</a>, Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>, 2017.</p>
+</script>
+</section>
+
+
+
+<!-- DON'T TOUCH UNLESS YOU KNOW WHAT YOU'RE DOING :-) -->
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+    // Optional reveal.js plugins
+    dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+</body>
+</html>

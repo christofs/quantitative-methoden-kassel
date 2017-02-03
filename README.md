@@ -1,2 +1,2 @@
-# quantitative-methoden-kassel
-Folien "Quantitative Methoden der Textanalyse" (Kassel, Januar 2017)
+# topic-modeling-vorlesung
+Topic Modeling: Vorlesung
